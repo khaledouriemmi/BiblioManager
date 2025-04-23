@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription d'un Abonné</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Inscription d'un Abonné</h2>
+        <form action="{{ url_for('inscrire_abonne') }}" method="post">
+            <label for="prenomAbonne">Prénom :</label>
+            <input type="text" id="prenomAbonne" name="prenomAbonne" required>
+            
+            <label for="nomAbonne">Nom :</label>
+            <input type="text" id="nomAbonne" name="nomAbonne" required>
+            
+            <label for="telephoneAbonne">Téléphone :</label>
+            <input type="number" id="telephoneAbonne" name="telephoneAbonne" required>
+            
+            <label for="emailAbonne">Email :</label>
+            <input type="text" id="emailAbonne" name="emailAbonne" required>
+            
+            <button type="submit">Enregistrer</button>
+            <a href="{{ url_for('index') }}"><button type="button">Retour à l'Accueil</button></a>
+        </form>
+    </div>
+</body>
+</html>

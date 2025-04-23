@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprunt d'un Livre</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Emprunter un Livre</h2>
+
+        <!-- Search Abonné by name -->
+        <label for="abonneSearch">Rechercher un abonné :</label>
+        <input type="text" id="abonneSearch" placeholder="Nom ou prénom">
+        <select id="abonneSelect" name="idAbonne" required>
+            <option value="">Sélectionnez un abonné</option>
+            <!-- Dynamically filled with AJAX -->
+        </select>
+
+        <!-- Search Livre by title -->
+        <label for="livreSearch">Rechercher un livre :</label>
+        <input type="text" id="livreSearch" placeholder="Titre du livre">
+        <select id="livreSelect" name="idLivre" required>
+            <option value="">Sélectionnez un livre</option>
+            <!-- Dynamically filled with AJAX -->
+        </select>
+
+        <!-- Borrowing form -->
+        <form action="{{ url_for('emprunter_livre') }}" method="post">
+            <input type="hidden" name="idAbonne" id="abonneHiddenInput">
+            <input type="hidden" name="idLivre" id="livreHiddenInput">
+
+            <label for="dateEmrpunt">Date d'emprunt :</label>
+            <input type="date" name="dateEmrpunt" required>
+
+            <label for="dateRetour">Date de retour :</label>
+            <input type="date" name="dateRetour" required>
+
+            <button type="submit">Emprunter le Livre</button>
+            <a href="{{ url_for('index') }}"><button type="button">Retour à l'Accueil</button></a>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

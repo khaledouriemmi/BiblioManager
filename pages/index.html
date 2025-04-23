@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système de Gestion de Bibliothèque</title>
+    <!-- Link CSS from the css folder using url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue dans le Système de Gestion de Bibliothèque</h1>
+        <p>Choisissez une option ci-dessous pour continuer :</p>
+        <div class="buttons">
+            <a href="{{ url_for('inscrire_abonne') }}"><button>Inscrire un Abonné</button></a>
+            <a href="{{ url_for('ajouter_livre') }}"><button>Ajouter un Livre</button></a>
+            <a href="{{ url_for('emprunter_livre') }}"><button>Emprunter un Livre</button></a>
+        </div>
+    </div>
+    <!-- Link to scripts.js if needed -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
